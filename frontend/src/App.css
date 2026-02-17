@@ -1,0 +1,35 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.table th {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.badge {
+    padding: 0.5em 0.8em;
+    font-size: 0.85em;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+.card-header {
+    font-weight: bold;
+}
+
+.pagination {
+    margin-top: 2rem;
+}
