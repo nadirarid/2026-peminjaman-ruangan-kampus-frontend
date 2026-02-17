@@ -7,7 +7,6 @@ const Navbar: React.FC = () => {
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <div className="container">
                 <Link className="navbar-brand" to="/">
-                    <FaDoorOpen className="me-2" />
                     Peminjaman Ruangan
                 </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -23,11 +22,6 @@ const Navbar: React.FC = () => {
                         <li className="nav-item">
                             <Link className="nav-link" to="/peminjaman">
                                 <FaCalendarAlt className="me-1" /> Peminjaman
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/riwayat">
-                                <FaHistory className="me-1" /> Riwayat
                             </Link>
                         </li>
                     </ul>

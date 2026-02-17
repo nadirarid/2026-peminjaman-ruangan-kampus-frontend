@@ -3,7 +3,7 @@ export interface Ruangan {
     idRuangan: string;
     namaRuangan: string;
     kapasitas: number;
-    status: 'Tersedia' | 'Dipinjam' | 'Perbaikan';
+    status: 'Tersedia' | 'Dipakai' | 'Perbaikan' | 'Dihapus';
     createdAt: string;
 }
 

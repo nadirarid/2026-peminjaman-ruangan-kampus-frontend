@@ -26,10 +26,10 @@ const TambahRuanganPage: React.FC = () => {
         setLoading(true);
         try {
             await ruanganService.create(formData);
-            alert('Ruangan berhasil ditambahkan!');
+            alert('Ruangan berhasil ditambahkan');
             navigate('/ruangan');
         } catch (error) {
-            alert('Gagal menambahkan ruangan. Mungkin kode ruangan sudah ada.');
+            alert('Gagal menambahkan ruangan');
         } finally {
             setLoading(false);
         }
@@ -57,11 +57,9 @@ const TambahRuanganPage: React.FC = () => {
                                 name="idRuangan"
                                 value={formData.idRuangan}
                                 onChange={handleChange}
-                                placeholder="Contoh: R001, R002, A101"
                                 required
                                 maxLength={50}
                             />
-                            <small className="text-muted">Kode unik untuk ruangan</small>
                         </div>
 
                         <div className="mb-3">
@@ -72,7 +70,6 @@ const TambahRuanganPage: React.FC = () => {
                                 name="namaRuangan"
                                 value={formData.namaRuangan}
                                 onChange={handleChange}
-                                placeholder="Contoh: Ruang Meeting 1, Auditorium"
                                 required
                                 maxLength={100}
                             />
@@ -86,7 +83,6 @@ const TambahRuanganPage: React.FC = () => {
                                 name="kapasitas"
                                 value={formData.kapasitas || ''}
                                 onChange={handleChange}
-                                placeholder="Contoh: 10, 20, 50"
                                 required
                                 min="1"
                             />
