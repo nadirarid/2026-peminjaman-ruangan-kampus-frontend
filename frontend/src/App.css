@@ -1,35 +1,319 @@
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+:root {
+  --primary-color: blue;
+  --success-color: green;
+  --info-color: lightblue;
+  --warning-color: yellow;
+  --danger-color: red;
+  --light-bg: white;
+  --dark-text: black;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
 }
 
-h1 {
-  color: #333;
-  text-align: center;
-  margin-bottom: 30px;
+body {
+  background-color: whitesmoke;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark-text);
 }
 
-.table th {
-    background-color: #0d6efd;
-    color: white;
+.navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
 }
 
-.badge {
-    padding: 0.5em 0.8em;
-    font-size: 0.85em;
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
 }
 
-.btn-sm {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
+.nav-link {
+  font-weight: 500;
+  margin: 0 0.5rem;
+  transition: var(--transition);
+  border-radius: 20px;
+  padding: 0.5rem 1rem !important;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .card-header {
-    font-weight: bold;
+  background: linear-gradient(135deg, var(--primary-color), #0099ff);
+  color: white;
+  font-weight: 600;
+  border-bottom: none;
+  padding: 1rem 1.5rem;
+}
+
+.table {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.table thead th {
+  background: linear-gradient(135deg, var(--primary-color), #0099ff);
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 1rem;
+}
+
+.table tbody tr {
+  transition: var(--transition);
+}
+
+.table tbody tr:hover {
+  background-color: rgba(13, 110, 253, 0.05);
+  transform: scale(1.01);
+}
+
+.table td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.btn {
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  transition: var(--transition);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-sm {
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), blue);
+  border: none;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--success-color), turquoise);
+  border: none;
+}
+
+.btn-info {
+  background: linear-gradient(135deg, var(--info-color), lightblue);
+  border: none;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, var(--danger-color), red);
+  border: none;
+}
+
+.badge {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bg-success { background: linear-gradient(135deg, green); }
+.bg-warning { background: linear-gradient(135deg, orange); }
+.bg-danger { background: linear-gradient(135deg, red); }
+.bg-info { background: linear-gradient(135deg, turquoise); }
+.bg-primary { background: linear-gradient(135deg, navy); }
+.bg-secondary { background: linear-gradient(135deg, gray); }
+
+.form-control, .form-select {
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  border: 1px solid beige;
+  transition: var(--transition);
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+  transform: translateY(-2px);
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--dark-text);
+  margin-bottom: 0.5rem;
+}
+
+.mainpage {
+  background: linear-gradient(135deg, navy, purple);
+  color: white;
+  padding: 3rem !important;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.mainpage .btn {
+  background: white;
+  color: var(--primary-color);
+  border: none;
+}
+
+.mainpage .btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: navy;
 }
 
 .pagination {
-    margin-top: 2rem;
+  margin-top: 2rem;
+}
+
+.page-link {
+  border-radius: 25px;
+  margin: 0 3px;
+  color: var(--primary-color);
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.page-link:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.page-item.active .page-link {
+  background: linear-gradient(135deg, var(--primary-color), blue);
+  border-color: var(--primary-color);
+}
+
+.detail-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.detail-header {
+  background: linear-gradient(135deg, navy, purple);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.detail-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.detail-content {
+  padding: 2rem;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid whitesmoke;
+  transition: var(--transition);
+}
+
+.info-row:hover {
+  background-color: rgba(13, 110, 253, 0.05);
+  padding-left: 1.5rem;
+}
+
+.info-label {
+  font-weight: 600;
+  min-width: 150px;
+  color: gray;
+}
+
+.info-value {
+  font-weight: 500;
+  color: var(--dark-text);
+}
+
+@media (max-width: 768px) {
+  .mainpage {
+    padding: 2rem !important;
+  }
+  
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .info-label {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.alert {
+    border-radius: 10px;
+    border: none;
+    padding: 1rem;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    color: navy;
+}
+
+.alert-warning {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    color: red;
+}
+
+.form-control-lg, .form-select-lg {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+}
+
+.card {
+    margin-bottom: 2rem;
+}
+
+.modal-content {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #ffc107, #fd7e14);
+    color: white;
+    border-bottom: none;
+    padding: 1.5rem;
+}
+
+.modal-header .btn-close {
+    filter: brightness(0) invert(1);
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #e0e0e0;
+    padding: 1.5rem;
 }

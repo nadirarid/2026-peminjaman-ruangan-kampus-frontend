@@ -3,7 +3,7 @@ import { peminjamanService } from '../services/peminjamanService';
 import { ruanganService } from '../services/ruanganService';
 import type { Peminjaman } from '../types/peminjaman';
 import type { Ruangan } from '../types/ruangan';
-import Status from '../components/Status';
+import Status from '../components/StatusBadge';
 import { Link } from 'react-router-dom';
 import { FaCheck, FaTimes, FaCheckCircle, FaEye, FaFilter } from 'react-icons/fa';
 import { format } from 'date-fns';
@@ -40,7 +40,6 @@ const PeminjamanPage: React.FC = () => {
         setLoading(true);
         try {
             const result = await peminjamanService.getAll(page, filterStatus || undefined);
-            // Filter berdasarkan ruangan jika dipilih
             let filteredData = result.data;
             if (selectedRuangan) {
                 filteredData = filteredData.filter(p => p.idRuangan === selectedRuangan);
@@ -105,7 +104,6 @@ const PeminjamanPage: React.FC = () => {
                 </Link>
             </div>
 
-            {/* Filter Section */}
             <div className="card mb-4">
                 <div className="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                     <span>Filter Peminjaman</span>
@@ -147,16 +145,12 @@ const PeminjamanPage: React.FC = () => {
                                 </select>
                             </div>
                         </div>
-                        <button className="btn btn-primary" onClick={loadPeminjaman}>
-                            Terapkan Filter
-                        </button>
                     </div>
                 )}
             </div>
 
-            {/* Tabel Peminjaman */}
             <div className="table-responsive">
-                <table className="table table-striped table-hover">
+                <table className="table table-hover">
                     <thead className="table-primary">
                         <tr>
                             <th>No</th>
@@ -235,7 +229,6 @@ const PeminjamanPage: React.FC = () => {
                 </table>
             </div>
 
-            {/* Pagination */}
             {totalPages > 1 && (
                 <nav>
                     <ul className="pagination justify-content-center">
